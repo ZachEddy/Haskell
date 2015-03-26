@@ -43,24 +43,16 @@ playGame n guesses m = do
 patterns guesses dict = Map.fromListWith (++) (map (\word -> ((key word guesses), [word])) dict)
 key word guesses = map (\letter -> if (elem letter guesses) then letter else '-') word
 
---gets the value out of Just. Pattern matching would've also worked - but I think this is a little cleaner
+--Gets the value out of Just. Pattern matching would've also worked - but I think this is a little cleaner
 getJustValue (Just a) = a
 
---This prints out the map with the given keys (WORKING)
+--This prints out the map with the given keys
 printMap keyList m = do
 	putStrLn (key ++ " matches " ++ show (getJustValue (Map.lookup key m)))
 	if (tail keyList) == [] then do putStrLn "" else printMap (tail keyList) m
 		where key = head keyList 
 
-
---printMap m =
---	let printKeyAndValues keyList m = do
---		putStrLn (key ++ " matches " ++ show (getJustValue (Map.lookup key m)))
---		if (tail keyList) == [] then do putStrLn "" else printMap (tail keyList) m
---			where key = head keyList 
---	in printKeyAndValues (Map.keys m) m
-
---Finds the largest list of words in the dictionary and the key that's assosiated with it
+--Finds the largest list of words in the dictionary and the key that's associated with it
 findMapMax m = foldr1 (\(key, value) acc -> if length value > length (snd acc) then (key, value) else acc) keyValuePairs
 	where keyValuePairs = map (\key -> (key, getJustValue (Map.lookup key m))) (Map.keys m)
 
