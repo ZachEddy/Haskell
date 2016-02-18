@@ -56,4 +56,3 @@ colorGraph graph = assignColors (uniqueNodes graph) graph
 
 -- large list of states for test purposes
 us = [E "wa" "or", E "or" "ca", E "wa" "id", E "or" "id", E "ca" "nv", E "id" "nv", E "or" "nv", E "id" "mt", E "id" "wy", E "id" "ut", E "nv" "ut", E "nv" "az", E "ca" "az", E "ut" "az", E "mt" "wy", E "wy" "ut", E "wy" "co", E "co" "ut",E "co" "nm", E "nm" "az", E "mt" "nd", E "mt" "sd", E "nd" "mn", E "nd" "sd", E"sd" "wy", E "sd" "ne", E "ne" "co", E "sd" "mn", E "sd" "ia", E "ne" "ia", E "ne" "ks", E "ne" "mo", E "nm" "tx", E "nm" "ok", E "tx" "ok", E "co" "ok", E "co" "ks", E "ks" "ok", E "ks" "mo", E "ok" "ar", E "ar" "la", E "ar" "tx", E "mo" "ar", E "ia" "mo", E "mn" "ia"]
-Status API Training Shop Blog About Pricing
