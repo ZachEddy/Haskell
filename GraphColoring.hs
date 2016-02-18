@@ -1,4 +1,4 @@
---Zach Eddy − CS 291 Homework 4.
+-- a haskell program that colors graph vertices such that no two adjacent vertices have the same color
 
 data Color = Red | Green | Blue | Yellow | Purple | Brown
             deriving (Eq, Enum, Show, Bounded)
@@ -8,8 +8,8 @@ data Edge a = E a a
             deriving (Show, Eq)
 type Graph a = [Edge a]
 
-getBindingName (CB a _) = a --helper that gets a color binding's name.
-getBindingColor (CB _ a) = a --helper that gets a color binding's color.
+getBindingName (CB a _) = a -- helper that gets a color binding's name.
+getBindingColor (CB _ a) = a -- helper that gets a color binding's color.
 
 -- finds whether or not something is stored inside a color binding.
 colorOf bindingName [] = Nothing
